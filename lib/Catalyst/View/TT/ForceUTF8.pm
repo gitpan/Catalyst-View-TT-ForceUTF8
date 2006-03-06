@@ -4,7 +4,7 @@ use strict;
 
 use base 'Catalyst::View::TT';
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use Template::Provider::Encoding 0.04;
 use Template::Stash::ForceUTF8;
@@ -55,8 +55,9 @@ sub process {
   my ($self, $c) = @_;
   unless ($c->res->content_type) {
     if ($self->config->{STRICT_CONTENT_TYPE}) {
+      my $agent = $c->req->user_agent || '';
       $c->res->content_type(
-        ($c->req->user_agent || '' =~ /MSIE/)
+        $agent =~ /MSIE/
           ? 'text/html; charset=utf-8'
           : 'application/xhtml+xml; charset=utf-8'
       );

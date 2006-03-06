@@ -1,6 +1,9 @@
 Revision history for Perl extension Catalyst::View::TT::ForceUTF8.
 
-0.03  Fri Mar  1 20:46:45 2006
+0.04  Mon Mar 6 20:46:45 2006
+  - fixed bug when using STRICT_CONTENT_TYPE
+
+0.03  Fri Mar 3 20:46:45 2006
   - added helper
 
 0.01  Wed Mar  1 20:46:45 2006

@@ -1,0 +1,8 @@
+Changes
+lib/Catalyst/Helper/View/TT/ForceUTF8.pm
+lib/Catalyst/View/TT/ForceUTF8.pm
+Makefile.PL
+MANIFEST
+README
+t/Catalyst-View-TT-ForceUTF8.t
+META.yml                                 Module meta-data (added by MakeMaker)

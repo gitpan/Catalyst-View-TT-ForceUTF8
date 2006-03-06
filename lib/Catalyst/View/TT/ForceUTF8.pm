@@ -4,7 +4,7 @@ use strict;
 
 use base 'Catalyst::View::TT';
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use Template::Provider::Encoding 0.04;
 use Template::Stash::ForceUTF8;
@@ -29,7 +29,7 @@ sub new {
 
   # XXX: copied from View::TT
   if (!(ref $config->{INCLUDE_PATH} eq 'ARRAY')) {
-    my $delim = $config->{DELMITER};
+    my $delim = $config->{DELIMITER};
     my @include_path
       = _coerce_paths($config->{INCLUDE_PATH}, $delim);
     if ( !@include_path ) {

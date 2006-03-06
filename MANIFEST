@@ -3,6 +3,7 @@ lib/Catalyst/Helper/View/TT/ForceUTF8.pm
 lib/Catalyst/View/TT/ForceUTF8.pm
 Makefile.PL
 MANIFEST
+META.yml			Module meta-data (added by MakeMaker)
 README
-t/Catalyst-View-TT-ForceUTF8.t
-META.yml                                 Module meta-data (added by MakeMaker)
+t/01use.t
+t/02pod.t

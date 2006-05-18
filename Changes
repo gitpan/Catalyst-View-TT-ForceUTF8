@@ -1,5 +1,11 @@
 Revision history for Perl extension Catalyst::View::TT::ForceUTF8.
 
+0.06  Thu May 18 12:02:00 2006
+  - bugfix: INCLUDE_PATH couldn't be passed correctly
+            when using ConfigLoader (Thanks to Hideo Kimura)
+
+    Updated Makefile.PL to require the latest version of Template::Provider::Encoding
+
 0.05  Tue Mar 7 02:46:45 2006
   - fixed typo
     add pod test

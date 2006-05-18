@@ -4,7 +4,7 @@ use strict;
 
 use base 'Catalyst::View::TT';
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 use Template::Provider::Encoding 0.04;
 use Template::Stash::ForceUTF8;
@@ -37,13 +37,13 @@ sub new {
       my $base = Path::Class::dir($root, 'base');
       @include_path = ("$root", "$base");
     }
-    $class->config->{INCLUDE_PATH} = \@include_path;
+    $config->{INCLUDE_PATH} = \@include_path;
   }
 
   $class->config->{PROVIDERS} = [ {
     name => 'Encoding',
     args => {
-      INCLUDE_PATH => $class->config->{INCLUDE_PATH},
+      INCLUDE_PATH => $config->{INCLUDE_PATH},
     },
   }, ];
   $class->config->{STASH} = Template::Stash::ForceUTF8->new;

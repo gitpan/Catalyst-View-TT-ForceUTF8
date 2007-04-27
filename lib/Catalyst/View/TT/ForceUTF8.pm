@@ -4,11 +4,18 @@ use strict;
 
 use base 'Catalyst::View::TT';
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
-use Template::Provider::Encoding 0.04;
+use Template::Provider::Encoding 0.09;
 use Template::Stash::ForceUTF8;
 use Path::Class;
+
+my @PROVIDER_CONFIG_KEYS = qw/
+  INCLUDE_PATH
+  DEFAULT_ENCODING
+  COMPILE_DIR
+  COMPILE_EXT
+/;
 
 # XXX: this is but a copy from View::TT.
 #      But this subroutine isn't class or instance method,
@@ -40,11 +47,13 @@ sub new {
     $config->{INCLUDE_PATH} = \@include_path;
   }
 
+  my %args = map  { ($_, $config->{$_})  }
+             grep { exists $config->{$_} }
+             for @PROVIDER_CONFIG_KEYS;
+
   $class->config->{PROVIDERS} = [ {
     name => 'Encoding',
-    args => {
-      INCLUDE_PATH => $config->{INCLUDE_PATH},
-    },
+    args => \%args,
   }, ];
   $class->config->{STASH} = Template::Stash::ForceUTF8->new;
   $class->config->{STRICT_CONTENT_TYPE} ||= 0;
@@ -81,18 +90,30 @@ Template View Class with utf8 encoding.
 
 This allows you to prevent publishing garbled result.
 
-=head1 CONTENT TYPE
-
-When you set *STRICT_CONTENT_TYPE* configuration,
-It automatically set content-type 'application/xhtml+xml; charset=utf-8'
-for browsers except MSIE.
+=head1 CONFIG
 
   __PACKAGE__->config(
     INCLUDE_PATH        => [..],
     TIMER               => 0,
     ... # and other View::TT's configuration.
     STRICT_CONTENT_TYPE => 1,
+    DEFAULT_ENCODING    => 'utf-8',
   );
+
+
+=over 4
+
+=item DEFAULT_ENCODING
+
+'utf-8' is set by default. See more detail L<Template::Provider::Encoding>.
+
+=item CONTENT TYPE
+
+When you set *STRICT_CONTENT_TYPE* configuration,
+It automatically set content-type 'application/xhtml+xml; charset=utf-8'
+for browsers except MSIE.
+
+=back
 
 =head1 SEE ALSO
 

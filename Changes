@@ -1,5 +1,12 @@
 Revision history for Perl extension Catalyst::View::TT::ForceUTF8.
 
+0.07  Fri Apr 27 15:13:00 2007
+  - bugfix: this module didin't hand config-params(COMPILE_EXT and COMPILE_DIR) over to provider.
+  - New config 'DEFAULT_ENCODING' comes for Template::Provider::Encoding 0.08.
+    Thanks to fbis.
+
+  - switched to Module::Install
+
 0.06  Thu May 18 12:02:00 2006
   - bugfix: INCLUDE_PATH couldn't be passed correctly
             when using ConfigLoader (Thanks to Hideo Kimura)

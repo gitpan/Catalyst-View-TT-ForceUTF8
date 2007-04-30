@@ -4,7 +4,7 @@ use strict;
 
 use base 'Catalyst::View::TT';
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 use Template::Provider::Encoding 0.09;
 use Template::Stash::ForceUTF8;
@@ -49,7 +49,7 @@ sub new {
 
   my %args = map  { ($_, $config->{$_})  }
              grep { exists $config->{$_} }
-             for @PROVIDER_CONFIG_KEYS;
+             @PROVIDER_CONFIG_KEYS;
 
   $class->config->{PROVIDERS} = [ {
     name => 'Encoding',

@@ -4,7 +4,7 @@ use strict;
 
 use base 'Catalyst::View::TT';
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 use Template::Provider::Encoding 0.09;
 use Template::Stash::ForceUTF8;
@@ -15,6 +15,7 @@ my @PROVIDER_CONFIG_KEYS = qw/
   DEFAULT_ENCODING
   COMPILE_DIR
   COMPILE_EXT
+  EVAL_PERL
 /;
 
 # XXX: this is but a copy from View::TT.

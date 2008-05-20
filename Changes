@@ -1,5 +1,8 @@
 Revision history for Perl extension Catalyst::View::TT::ForceUTF8.
 
+0.09 Tue May 20 18:02:00 2008
+  - added EVAL_PERL configuration requested by Marius Kjeldahl
+
 0.08  San Apr 29 01:30:00 2007
   - bugfix: fix the syntax error and a basic test. Sorry for this awful mistake...
 

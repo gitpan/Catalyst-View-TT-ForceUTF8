@@ -1,5 +1,10 @@
 Revision history for Perl extension Catalyst::View::TT::ForceUTF8.
 
+0.10 Wed Jan 28 16:23:00 2009
+  - Patch from Larry Leszczynski.
+    Now it works with $c->stash->{additional_template_paths}.
+    Thanks to Larry.
+
 0.09 Tue May 20 18:02:00 2008
   - added EVAL_PERL configuration requested by Marius Kjeldahl
 

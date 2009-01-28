@@ -4,7 +4,7 @@ use strict;
 
 use base 'Catalyst::View::TT';
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 use Template::Provider::Encoding 0.09;
 use Template::Stash::ForceUTF8;
@@ -55,6 +55,7 @@ sub new {
   $class->config->{PROVIDERS} = [ {
     name => 'Encoding',
     args => \%args,
+    copy_config => [qw(INCLUDE_PATH)],
   }, ];
   $class->config->{STASH} = Template::Stash::ForceUTF8->new;
   $class->config->{STRICT_CONTENT_TYPE} ||= 0;

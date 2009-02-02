@@ -1,5 +1,10 @@
 Revision history for Perl extension Catalyst::View::TT::ForceUTF8.
 
+0.11 Mon Feb 2 10:26:00 2009
+  - Patch from Larry Leszczynski.
+    added config value PARSER, PRE_CHOMP, POST_CHOMP.
+    Thanks to Larry.
+
 0.10 Wed Jan 28 16:23:00 2009
   - Patch from Larry Leszczynski.
     Now it works with $c->stash->{additional_template_paths}.

@@ -1,5 +1,9 @@
 Revision history for Perl extension Catalyst::View::TT::ForceUTF8.
 
+0.12 Mon Feb 2 16:17:00 2009
+  - Added description as DEPRECATED.
+    See Also: http://dev.catalystframework.org/wiki/gettingstarted/tutorialsandhowtos/using_unicode
+
 0.11 Mon Feb 2 10:26:00 2009
   - Patch from Larry Leszczynski.
     added config value PARSER, PRE_CHOMP, POST_CHOMP.

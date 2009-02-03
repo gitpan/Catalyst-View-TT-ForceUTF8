@@ -4,7 +4,7 @@ use strict;
 
 use base 'Catalyst::View::TT';
 
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 
 use Template::Provider::Encoding 0.09;
 use Template::Stash::ForceUTF8;
@@ -95,7 +95,7 @@ Template View Class with utf8 encoding.
 
 This allows you to prevent publishing garbled result.
 
-Not this module is deprecated.
+Now this module is deprecated.
 http://dev.catalystframework.org/wiki/gettingstarted/tutorialsandhowtos/using_unicode
 
 =head1 CONFIG
